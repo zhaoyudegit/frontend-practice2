@@ -52,9 +52,11 @@
     <label><input type="checkbox" name="topic" value="chart"> 数据可视化</label>
   </p>
   <p>
-    <label for="advice">具体建议</label><br>
-    <textarea id="advice" name="advice" rows="4" maxlength="200" placeholder="说点什么"></textarea>
-  </p>
+  <label for="advice">具体建议</label><br>
+  <textarea id="advice" name="advice" rows="4" maxlength="200" placeholder="说点什么"
+            oninput="document.getElementById('adviceErr').hidden = this.value.length < this.maxLength"></textarea>
+  <span id="adviceErr" hidden style="color:#c00">已达字数上限</span>
+</p>
   <p>
     <button type="submit">提交反馈</button>
   </p>
