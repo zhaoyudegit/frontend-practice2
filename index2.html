@@ -39,8 +39,9 @@
           <label for="college">所在学院</label>
           <select id="college" name="college" required>
             <option value="">请选择学院</option>
-            <option value="cs">信息学院</option>
+            <option value="cs">计算机学院</option>
             <option value="se">软件学院</option>
+            <option value="ee">电子信息学院</option>
             <option value="other">其他学院</option>
           </select>
         </p>
@@ -52,5 +53,37 @@
           <label for="birthday">出生日期</label>
           <input type="date" id="birthday" name="birthday" required>
         </p>
-      </body>
+        <p>参赛组别</p>
+        <p>
+          <label><input type="radio" name="group" value="novice" checked> 新手组</label>
+          <label><input type="radio" name="group" value="advanced"> 进阶组</label>
+        </p>
+        <p>擅长方向（可多选）</p>
+        <p>
+          <label><input type="checkbox" name="skill" value="algo"> 算法</label>
+          <label><input type="checkbox" name="skill" value="web"> Web 开发</label>
+          <label><input type="checkbox" name="skill" value="ai"> 人工智能</label>
+        </p>
+        <p>
+          <label for="brief">项目简介</label><br>
+          <textarea id="brief" name="brief" rows="4" maxlength="200" placeholder="简单介绍你的参赛想法"
+                    oninput="document.getElementById('briefErr').hidden = this.value.length < this.maxLength"></textarea>
+          <span id="briefErr" hidden style="color:#c00">已达字数上限</span>
+        </p>
+        <p>
+          <label for="proof">获奖证明（可选）</label>
+          <input type="file" id="proof" name="proof" accept=".pdf,.jpg,.png">
+        </p>
+        <p>
+          <label><input type="checkbox" name="agree" value="yes" required> 我已阅读并同意《参赛须知》</label>
+        </p>
+        <p>
+          <button type="submit">提交报名</button>
+        </p>
+      </form>
+    </section>
+  </main>
+  <footer>
+  </footer>
+</body>
 </html>
